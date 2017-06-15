@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.kahawa.development.kahawasystem">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".UI.Activities.SplashScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".UI.Activities.ActivityNews"
+            android:label="Kahawa Information System"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="com.kahawa.development.kahawasystem.MAINACTIVITY" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".UI.Activities.BuyActivity"
+            android:parentActivityName=".UI.Activities.ActivityNews"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".UI.Activities.ActivityNews" />
+        </activity>
+        <activity
+            android:name=".UI.Activities.SignUp"
+            android:parentActivityName=".UI.Activities.ActivityNews"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="UI.Activities.ActivityNews" />
+        </activity>
+        <activity android:name=".UI.Activities.LoginActivity" />
+        <activity
+            android:name=".UI.Activities.AddTopic"
+            android:parentActivityName=".UI.Activities.ActivityNews"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="UI.Activities.ActivityNews" />
+        </activity>
+        <activity android:name=".UI.Activities.ActivitySell" />
+        <activity
+            android:name=".UI.Activities.Chatroom"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".UI.Activities.FavActivity" />
+        <activity android:name=".UI.Activities.DetailedBuy"
+            android:parentActivityName=".UI.Activities.BuyActivity"
+            >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="UI.Activities.BuyActivity" />
+        </activity>
+    </application>
+
+</manifest>
